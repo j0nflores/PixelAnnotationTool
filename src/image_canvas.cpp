@@ -62,6 +62,7 @@ void ImageCanvas::loadImage(const QString &filename) {
 	_undo_index = 0;
 	if (QFile(_mask_file).exists()) {
 		_mask = ImageMask(_mask_file,_ui->id_labels);
+		_mask = _mask[:,:,0]
         _ui->runWatershed(this);// button_watershed->released());
 		_ui->checkbox_manuel_mask->setChecked(true);
 		_undo_list.push_back(_mask);
@@ -86,10 +87,10 @@ void ImageCanvas::saveMask() {
 //         if (!_ui->checkbox_border_ws->isChecked()) {
 //             watershed = removeBorder(_watershed.id, _ui->id_labels);
 //         }
-		watershed.save(_watershed_file);
+		/*watershed.save(_watershed_file);
 		QFileInfo file(_img_file);
 		QString color_file = file.dir().absolutePath() + "/" + file.completeBaseName() + "_color_mask.png";
-		idToColor(watershed, _ui->id_labels).save(color_file);
+		idToColor(watershed, _ui->id_labels).save(color_file);*/
 	}
     _undo_list.clear();
     _undo_index = 0;
