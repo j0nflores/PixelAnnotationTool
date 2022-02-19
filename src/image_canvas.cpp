@@ -54,7 +54,7 @@ void ImageCanvas::loadImage(const QString &filename) {
 
 	_image = mat2QImage(cv::imread(_img_file.toStdString()));
 	
-	_mask_file = file.dir().absolutePath()+ "/" + file.completeBaseName() + "_mask.png";
+	_mask_file = file.dir().absolutePath()+ "/" + file.completeBaseName() + ".png";
 	_watershed_file = file.dir().absolutePath()+ "/" + file.completeBaseName() + "_watershed_mask.png";
 
 	_watershed = ImageMask(_image.size());
