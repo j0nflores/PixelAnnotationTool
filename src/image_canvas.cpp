@@ -79,8 +79,9 @@ void ImageCanvas::loadImage(const QString &filename) {
 void ImageCanvas::saveMask() {
 	if (isFullZero(_mask.id))
 		return;
-
-	_mask.id.save(_mask_file);
+	
+	
+	_mask.id.convertToFormat(QImage::Format_Grayscale8).save(_mask_file);
 	if (!_watershed.id.isNull()) {
         QImage watershed = _watershed.id;
 //         if (!_ui->checkbox_border_ws->isChecked()) {
