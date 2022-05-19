@@ -1,3 +1,7 @@
+scripts_to_build/build_ok/
+scripts_to_build/build
+old_x64/
+
 # Prerequisites
 *.d
 

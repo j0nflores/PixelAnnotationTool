@@ -1,5 +1,7 @@
 ## build on Microsoft Windows with visual studio vc14 2015:
 
+-worked with Visual Studio Express 2015 for Windows 10
+
 - Edit `win_make_vc14_x64_to_edit.bat` and modify : 
     - QT5_DIR="/path/to/Qt/msvcXXX/lib/cmake"
 	- CMAKE_PREFIX_PATH="/path/to/OpenCV/build" the directory that points to the `OpenCVConfig.cmake` file
@@ -24,7 +26,7 @@ To compile the application :
 cd ..
 mkdir x64
 cd x64
-cmake -DQT5_DIR=/path/to/Qt5.9.1/5.9.1/gcc_64/lib/cmake -G "Unix Makefiles" ..
+cmake -DQT5_DIR="C:/Qt/Qt5.12.10/5.12.10/msvc2017_64/lib/cmake" -DCMAKE_PREFIX_PATH="C:/opencv/build" -G "Visual Studio 14 Win64" ..
 make
 
 ```

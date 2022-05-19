@@ -259,7 +259,7 @@ void MainWindow::runWatershed(ImageCanvas * ic) {
         iwatershed = removeBorder(iwatershed, id_labels);
     }
 	ic->setWatershedMask(iwatershed);
-	checkbox_watershed_mask->setCheckState(Qt::CheckState::Checked);
+	checkbox_watershed_mask->setCheckState(Qt::CheckState::Unchecked);
 	ic->update();
 }
 
